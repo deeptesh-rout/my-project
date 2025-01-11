@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 // Define the path to the frontend directory
-const frontendPath = path.join("C:\Users\sambi\OneDrive\Desktop\my project\frontend");
+const frontendPath = path.join(__dirname, 'frontend');
 
 // Serve static files from the frontend directory
 app.use(express.static(frontendPath));
@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
+// Start the server
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
